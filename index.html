@@ -142,7 +142,7 @@
             <div class="col-md-12">
                 <video width=100% height=auto autoplay muted playsinline loop>
                     <source src="./Image/brand-video.mp4" type="video/mp4">
-                    <!-- <source src="./Image/brand-video.mp4" type="video/ogg"> -->
+                    <!-- <source src="./Image/brand-video.mp4" type="video/ogg"> //not support by browser-->
                 </video>
             </div>
         </div>
@@ -428,6 +428,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- QRCode library (lightweight) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.min.js"></script>
     <script>
         // Product data
         const products = [
@@ -791,14 +792,25 @@
 
                 // Create QR code (200x200)
                 try {
-                    new QRCode(container, {
-                        text: url,
-                        width: 180,
-                        height: 180,
-                        colorDark: '#000000',
-                        colorLight: '#ffffff',
-                        correctLevel: QRCode.CorrectLevel.H
-                    });
+                    new QRCodeStyling({
+                            width: 300, // Width of the QR code
+                            height: 300, // Height of the QR code
+                            data: url, // The data to encode in the QR code
+                            image: "./image/strawberry-juice.png", // Path to your logo image
+                            dotsOptions: {
+                                color: "black", // Color of the QR code dots
+                                type: "square", // Shape of the QR code dots (e.g., "square", "dots", "rounded")
+                            },
+                            backgroundOptions: {
+                            color: "#ffffff", // Background color of the QR code
+                            },
+                            imageOptions: {
+                                hideBackgroundDots: true, // Hide dots behind the logo
+                                imageSize: 0.4, // Size of the logo relative to the QR code
+                                margin: 5, // Margin around the logo
+                            },
+                            }).append(container);
+   
                 } catch (e) {
                     // Fallback: show link text
                     const a = document.createElement('a');
