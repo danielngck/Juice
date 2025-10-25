@@ -7,87 +7,16 @@
     <title>Fresh Squeeze - Healthy Juices</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .product-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .health-benefit {
-            font-size: 0.9rem;
-            color: #28a745;
-            font-style: italic;
-        }
-
-        .cart-item {
-            border-bottom: 1px solid #eee;
-            padding: 10px 0;
-        }
-
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-
-        .nav-link {
-            color: #333;
-        }
-
-        .nav-link:hover {
-            color: #28a745;
-        }
-
-        .btn-primary {
-            background-color: #28a745;
-            border-color: #28a745;
-        }
-
-        .btn-primary:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
-
-        .shop-address {
-            margin-bottom: 1rem;
-        }
-
-        .payment-icon {
-            font-size: 2rem;
-            margin: 0 10px;
-        }
-
-        .payment-icon.fa-cc-visa {
-            color: #1a1f71;
-            /* Visa brand blue */
-        }
-
-        .payment-icon.fa-cc-mastercard {
-            color: #eb001b;
-            /* Mastercard red */
-        }
-
-        .payment-icon.fa-weixin {
-            color: #07C160;
-            /* WeChat green */
-        }
-
-        .payment-icon.fa-alipay {
-            color: #00A1E9;
-            /* Alipay blue */
-        }
-
-        .bg-gradient-success {
-            background: linear-gradient(180deg, #4de871 0%, #144d21 100%);
-        }
-    </style>
+    <link rel="stylesheet" href="./css/mystyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-3">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="fas fa-apple-alt text-success mr-2"></i>Fresh Squeeze
@@ -101,13 +30,13 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
+                        <a class="nav-link active" href="#products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#shops">Our Shops</a>
+                        <a class="nav-link active" href="#shops">Our Shops</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link active" href="#about">About Us</a>
                     </li>
                 </ul>
                 <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#cartModal">
@@ -118,11 +47,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="jumbotron jumbotron-fluid bg-gradient-success text-white">
+    <div class="bg-gradient-success text-white py-4">
         <div class="container text-center">
             <h1 class="display-4">Natural, Healthy & Tasty Juices</h1>
-            <p class="lead">Handcrafted with love by our three founding members using 100% natural fruits</p>
-            <a href="#products" class="btn btn-light btn-lg mt-3">Explore Our Juices</a>
+            <p class="lead text-center">Handcrafted with love by our three founding members using 100% natural fruits
+            </p>
+            <a href="#products" class="btn btn-light btn-lg mt-3 mb-3">Explore Our Juices</a>
         </div>
     </div>
 
@@ -130,13 +60,17 @@
     <section id="about" class="py-5">
         <div class="container">
             <!-- <div class="row"> -->
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4 text-center">
                 <h2>Our Story</h2>
-                <p class="lead">Founded by three passionate health enthusiasts, we believe in the power of natural
-                    ingredients to nourish the body and delight the taste buds.</p>
-                <p>Every juice is carefully crafted to deliver maximum nutritional benefits while maintaining incredible
-                    flavor. We source only the finest fruits and ingredients to create our unique blends.</p>
-                <p>Visit any of our three Hong Kong shops or order online for delivery. In-store customers can scan our
+                <p>Founded by three passionate health enthusiasts, we believe in the power of natural ingredients to
+                    nourish the body and delight the taste buds.
+
+                <p>Every juice is carefully crafted to deliver maximum
+                    nutritional benefits while maintaining incredible
+                    flavor.</p>
+
+                <p>We source only the finest fruits and ingredients to create our unique blends. Visit any of
+                    our three Hong Kong shops or order online for delivery. In-store customers can scan our
                     QR code to order directly from our website!</p>
             </div>
             <div class="col-md-12">
@@ -169,7 +103,7 @@
                     <p>123 Hennessy Road, Causeway Bay</p>
                     <p>Open: 9am - 9pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2888 7777</p>
-                    <div class="text-center mt-2">
+                    <div class="mt-2">
                         <div id="qr-CausewayBay" aria-label="QR code for Causeway Bay" style="display:inline-block">
                         </div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="CausewayBay">Order
@@ -181,7 +115,7 @@
                     <p>456 Nathan Road, Mong Kok</p>
                     <p>Open: 8am - 10pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2333 8888</p>
-                    <div class="text-center mt-2">
+                    <div class="mt-2">
                         <div id="qr-MongKok" aria-label="QR code for Mong Kok" style="display:inline-block"></div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="MongKok">Order
                                 Online</a></div>
@@ -192,25 +126,25 @@
                     <p>789 Queen's Road Central</p>
                     <p>Open: 7am - 8pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2555 6666</p>
-                    <div class="text-center mt-2">
+                    <div class="mt-2">
                         <div id="qr-Central" aria-label="QR code for Central" style="display:inline-block"></div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="Central">Order
                                 Online</a></div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p class="lead">Scan our QR code in any shop to order directly from your phone!</p>
+            <div>
+                <h6 class="lead-1 text-center mt-3">Scan our QR code in any shop to order directly from your phone!</h6>
                 <!-- <img src="#" alt="QR Code for ordering" class="img-fluid rounded" style="max-width: 150px;"> -->
             </div>
         </div>
     </section>
 
     <!-- Delivery & Payment Section -->
-    <section class="py-5 bg-gradient-success text-white">
+    <footer class="py-4 bg-gradient-success text-white">
         <div class="container text-center">
             <h2>Delivery & Payment Options</h2>
-            <p class="lead mb-4">We deliver across Hong Kong. Choose your preferred payment method:</p>
+            <p class="lead mb-4 text-center">We deliver across Hong Kong. Choose your preferred payment method:</p>
             <div class="d-flex justify-content-center flex-wrap">
                 <i class="fab fa-cc-visa payment-icon"></i>
                 <i class="fab fa-cc-mastercard payment-icon"></i>
@@ -221,17 +155,17 @@
             </div>
             <hr>
             <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <p>&copy; 2025 Fresh Squeeze. All rights reserved.</p>
+                <div class="col-md-10 text-center">
+                    <p class="text-center">&copy; 2025 Fresh Squeeze. All rights reserved.</p>
                 </div>
-                <div class="col-md-6 text-center">
+                <span class="social-icons">
                     <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-                </div>
+                </span>
             </div>
         </div>
-    </section>
+    </footer>
 
 
     <!-- Product Modal -->
@@ -427,8 +361,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- QRCode library (lightweight) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.min.js"></script>
+
     <script>
         // Product data
         const products = [
@@ -556,7 +491,7 @@
                 card.className = 'col-md-4 mb-4';
                 card.innerHTML = `
                     <div class="card product-card h-100">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 200px; object-fit: cover;">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="width: 350px;  object-fit: fill ;">
                         <div class="card-body">
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text health-benefit">${product.description}</p>
@@ -771,9 +706,9 @@
         function generateShopQRCodes() {
             // Map shop IDs to readable names/labels
             const shops = [
-                { id: 'CausewayBay', label: 'Causeway Bay' },
-                { id: 'MongKok', label: 'Mong Kok' },
-                { id: 'Central', label: 'Central' }
+                { id: 'CausewayBay', label: 'Causeway Bay', icon: './Image/qr-strawberry-juice.png' },
+                { id: 'MongKok', label: 'Mong Kok', icon: './Image/qr-3juices.png' },
+                { id: 'Central', label: 'Central', icon: './Image/qr-smoothie.png' }
             ];
 
             // Determine base URL - prefer the document location origin + pathname so links work locally when served
@@ -793,24 +728,24 @@
                 // Create QR code (200x200)
                 try {
                     new QRCodeStyling({
-                            width: 200, // Width of the QR code
-                            height: 200, // Height of the QR code
-                            data: url, // The data to encode in the QR code
-                            image: "./Image/strawberry-juice.png", // Path to your logo image
-                            dotsOptions: {
-                                color: "black", // Color of the QR code dots
-                                type: "square", // Shape of the QR code dots (e.g., "square", "dots", "rounded")
-                            },
-                            backgroundOptions: {
+                        width: 200, // Width of the QR code
+                        height: 200, // Height of the QR code
+                        data: url, // The data to encode in the QR code
+                        image: shop.icon, // Path to your logo images
+                        dotsOptions: {
+                            color: "black", // Color of the QR code dots
+                            type: "dots", // Shape of the QR code dots (e.g., "square", "dots", "rounded")
+                        },
+                        backgroundOptions: {
                             color: "#ffffff", // Background color of the QR code
-                            },
-                            imageOptions: {
-                                hideBackgroundDots: true, // Hide dots behind the logo
-                                imageSize: 0.4, // Size of the logo relative to the QR code
-                                margin: 5, // Margin around the logo
-                            },
-                            }).append(container);
-   
+                        },
+                        imageOptions: {
+                            hideBackgroundDots: true, // Hide dots behind the logo
+                            imageSize: 0.4, // Size of the logo relative to the QR code
+                            margin: 5, // Margin around the logo
+                        },
+                    }).append(container);
+
                 } catch (e) {
                     // Fallback: show link text
                     const a = document.createElement('a');
@@ -837,12 +772,4 @@
     </script>
 </body>
 
-
 </html>
-
-
-
-
-
-
-
