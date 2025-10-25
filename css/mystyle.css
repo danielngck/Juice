@@ -1,0 +1,146 @@
+/*
+    .work-sans-<uniquifier> {
+        font-family: "Work Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+    */
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #333333;
+}
+
+.container h2 {
+    margin: 2.5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0084e9;
+    font-style: normal;
+}
+
+.container p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Lead paragraph styling from bootstrap*/
+.lead {
+    font-size: 1.25rem;
+    /* Larger font size */
+    font-weight: 300;
+    /* Light font weight */
+}
+
+.lead-1 {
+    color: chocolate;
+    font-size: 1.1rem;
+    /* Larger font size */
+    font-weight: 400;
+    /* Light font weight */
+}
+
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.health-benefit {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-style: italic;
+}
+
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Make brand and link text slightly larger */
+.navbar .navbar-brand {
+    font-size: 1.8rem;
+    /* default ≈1rem */
+    font-weight: 600;
+    /* bolden a bit for visibility */
+}
+
+.navbar .nav-link {
+    font-size: 1.25rem;
+    /* increase link size slightly */
+}
+
+/* make the cart button text match */
+.navbar .btn {
+    font-size: 1.05rem;
+}
+
+
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.order-online {
+    display: inline-block;
+    font-size: 14px;
+    background: #f1f1f1;
+    color: #333;
+    padding: 6px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.order-online:hover {
+    background: #e2e2e2;
+}
+
+.shop-address {
+    margin-bottom: 1rem;
+}
+
+.payment-icon {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.payment-icon.fa-cc-visa {
+    color: #1a1f71;
+    /* Visa brand blue */
+}
+
+.payment-icon.fa-cc-mastercard {
+    color: #eb001b;
+    /* Mastercard red */
+}
+
+.payment-icon.fa-weixin {
+    color: #07C160;
+    /* WeChat green */
+}
+
+.payment-icon.fa-alipay {
+    color: #00A1E9;
+    /* Alipay blue */
+}
+
+.bg-gradient-success {
+    background: linear-gradient(180deg, #66e283 0%, #30ce54 100%);
+}
