@@ -144,3 +144,21 @@ body {
 .bg-gradient-success {
     background: linear-gradient(180deg, #66e283 0%, #30ce54 100%);
 }
+
+@media (max-width: 768px) {
+    .container h2 {
+        margin: 17rem 0 2.5rem; /* Increased top margin */
+        font-size: 2rem;
+        font-weight: bold;
+        color: #0084e9;
+        font-style: normal;
+    }
+
+    .container p {
+        text-align: justify;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #555555;
+        padding-top: 1rem; /* Added top padding */
+    }
+}
