@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./css/mystyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+
 </head>
 
 <body>
@@ -19,31 +16,42 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top py-3">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-apple-alt text-success mr-2"></i>Fresh Squeeze
+                <i class="fas fa-apple-alt fa-lg text-success mr-2"></i>Fresh Squeeze
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto nav-tabs">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#products">Products</a>
+                        <a class="nav-link" href="#products">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#shops">Our Shops</a>
+                        <a class="nav-link" href="#shops">Shops</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#about">About Us</a>
+                        <a class="nav-link" href="#about">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#membershipModal">Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#promotionModal">Promotions</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#cartModal">
-                    <i class="fas fa-shopping-cart mr-1"></i> Cart (<span id="cart-count">0</span>)
-                </button>
+
+                <div class="d-flex align-items-center">
+                    <button id="login-button" class="btn btn-outline-secondary mx-2 btn-sm" data-toggle="modal"
+                        data-target="#loginModal">
+                        <i class="fas fa-user mr-1"></i> Member
+                    </button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#cartModal">
+                        <i class="fas fa-shopping-cart mr-1"></i> Cart (<span id="cart-count">0</span>)
+                    </button>
+                </div>
             </div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -57,34 +65,44 @@
     </div>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <!-- <div class="row"> -->
-            <div class="col-md-12 mb-4 text-center">
+    <section id="about" class="spacing-top">
+        <div class="container text-center">
+            <div class="col-12">
                 <h2>Our Story</h2>
                 <p>Founded by three passionate health enthusiasts, we believe in the power of natural ingredients to
-                    nourish the body and delight the taste buds.
-
+                    nourish the body and delight the taste buds.</p>
                 <p>Every juice is carefully crafted to deliver maximum
-                    nutritional benefits while maintaining incredible
-                    flavor.</p>
-
+                    nutritional benefits while maintaining incredible flavor.</p>
                 <p>We source only the finest fruits and ingredients to create our unique blends. Visit any of
                     our three Hong Kong shops or order online for delivery. In-store customers can scan our
                     QR code to order directly from our website!</p>
             </div>
-            <div class="col-md-12">
-                <video width=100% height=auto autoplay muted playsinline loop>
+            <div class="col-12">
+                <video class="img-fluid" width=100% height=auto autoplay muted playsinline loop>
                     <source src="./Image/brand-video.mp4" type="video/mp4">
-                    <!-- <source src="./Image/brand-video.mp4" type="video/ogg"> //not support by browser-->
+                    <!-- <source src="./Image/brand-video.mp4" type="video/ogg"> //not supported by browser-->
                 </video>
             </div>
-        </div>
+
+            <div class="carousel-container mt-5">
+                <div class="carousel">
+                    <img src="./Image/ca-1.svg" alt="1" />
+                    <img src="./Image/ca-2.svg" alt="2" />
+                    <img src="./Image/ca-3.svg" alt="3" />
+                    <img src="./Image/ca-4.png" alt="4" />
+                    <!-- Duplicate images fsvgseamless loop -->
+                    <img src="./Image/ca-1.svg" alt="1" />
+                    <img src="./Image/ca-2.svg" alt="2" />
+                    <img src="./Image/ca-3.svg" alt="3" />
+                    <img src="./Image/ca-4.png" alt="4" />
+                </div>
+            </div>
         </div>
     </section>
 
+
     <!-- Products Section -->
-    <section id="products" class="py-5 bg-light">
+    <section id="products" class="spacing-top bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Our Signature Juices</h2>
             <div class="row" id="products-container">
@@ -94,7 +112,7 @@
     </section>
 
     <!-- Shops Section -->
-    <section id="shops" class="py-5">
+    <section id="shops" class="spacing-top">
         <div class="container">
             <h2 class="text-center mb-5">Our Hong Kong Shops</h2>
             <div class="row">
@@ -103,7 +121,9 @@
                     <p>123 Hennessy Road, Causeway Bay</p>
                     <p>Open: 9am - 9pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2888 7777</p>
-                    <div class="mt-2">
+                    <a href=https://maps.app.goo.gl/Px3XZt7bjwLSaKuF7 class="btn btn-md btn-primary"
+                        target="_blank">View on Map</a>
+                    <div class="mt-4">
                         <div id="qr-CausewayBay" aria-label="QR code for Causeway Bay" style="display:inline-block">
                         </div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="CausewayBay">Order
@@ -115,7 +135,9 @@
                     <p>456 Nathan Road, Mong Kok</p>
                     <p>Open: 8am - 10pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2333 8888</p>
-                    <div class="mt-2">
+                    <a href=https://maps.app.goo.gl/t2gVKjpzHaf1kKZr5 class="btn btn-md btn-primary"
+                        target="_blank">View on Map</a>
+                    <div class="mt-4">
                         <div id="qr-MongKok" aria-label="QR code for Mong Kok" style="display:inline-block"></div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="MongKok">Order
                                 Online</a></div>
@@ -123,10 +145,12 @@
                 </div>
                 <div class="col-md-4 shop-address">
                     <h4>Central</h4>
-                    <p>789 Queen's Road Central</p>
+                    <p>78 Queen's Road Central</p>
                     <p>Open: 7am - 8pm daily</p>
                     <p><i class="fas fa-phone"></i> +852 2555 6666</p>
-                    <div class="mt-2">
+                    <a href=https://maps.app.goo.gl/q3b477mMkP2BKzwZ9 class="btn btn-md btn-primary"
+                        target="_blank">View on Map</a>
+                    <div class="mt-4">
                         <div id="qr-Central" aria-label="QR code for Central" style="display:inline-block"></div>
                         <div><a href="#" class="btn btn-sm btn-light mt-2 order-online" data-shop="Central">Order
                                 Online</a></div>
@@ -189,17 +213,19 @@
                             <div class="form-group mt-4">
                                 <label>Cup Size</label>
                                 <div class="form-check">
-                                    <input class="form-check-input cup-size" type="radio" name="cupSize" value="30"
-                                        checked>
-                                    <label class="form-check-label">Small - HK$30</label>
+                                    <input class="form-check-input cup-size" type="radio" name="cupSize" id="cupSize30"
+                                        value="30" checked>
+                                    <label class="form-check-label" for="cupSize30">Small - HK$30</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input cup-size" type="radio" name="cupSize" value="40">
-                                    <label class="form-check-label">Medium - HK$40</label>
+                                    <input class="form-check-input cup-size" type="radio" name="cupSize" id="cupSize40"
+                                        value="40">
+                                    <label class="form-check-label" for="cupSize40">Medium - HK$40</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input cup-size" type="radio" name="cupSize" value="50">
-                                    <label class="form-check-label">Large - HK$50</label>
+                                    <input class="form-check-input cup-size" type="radio" name="cupSize" id="cupSize50"
+                                        value="50">
+                                    <label class="form-check-label" for="cupSize50">Large - HK$50</label>
                                 </div>
                             </div>
 
@@ -239,7 +265,8 @@
 
                             <div class="form-group">
                                 <label>Quantity</label>
-                                <input type="number" class="form-control" id="quantity" min="1" value="1">
+                                <input type="number" class="form-control" id="quantity" min="1" value="0">
+                                <!-- reset the value back to 1 if it is less than 1 -->
                             </div>
 
                             <p class="lead">Total: HK$<span id="modal-total">30</span></p>
@@ -281,6 +308,176 @@
         </div>
     </div>
 
+
+
+    <!-- Membership Modal -->
+    <div class="modal fade" id="membershipModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Membership Level Authentication</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Enter Your Purchase Details</h6>
+                            <div class="form-group">
+                                <label>Number of juice cups purchased last month</label>
+                                <input type="number" class="form-control" id="juice-cups" min="0" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label>Total spending last month (HK$)</label>
+                                <input type="number" class="form-control" id="total-spending" min="0" value="0">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-membership">Check Membershipbutton>
+
+                                <div class="mt-4">
+                                    <h6>Try with sample customers:</h6>
+                                    <div class="row mt-2" id="sample-customers">
+                                        <!-- Sample customers will be generated here -->
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6>Membership Benefits</h6>
+                            <div class="card mb-3">
+                                <div class="card-header bg-danger text-white">Diamond Member (20% discount)</div>
+                                <div class="card-body">
+                                    <p>Requirements: More than 30 cups of juice and more than HK$1,000 spendings in the
+                                        last month</p>
+                                    <p>Benefits: 20% discount on all purchases</p>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="card-header bg-warning text-white">Gold Member (10% discount)</div>
+                                <div class="card-body">
+                                    <p>Requirements: More than 20 cups of juice and more than HK$600 spendings in the
+                                        last month</p>
+                                    <p>Benefits: 10% discount on all purchases</p>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="card-header bg-secondary text-white">Silver Member (5% discount)</div>
+                                <div class="card-body">
+                                    <p>Requirements: More than 15 cups of juice and more than HK$400 spendings in the
+                                        last month</p>
+                                    <p>Benefits: 5% discount on all purchases</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header bg-muted text-dark">Bronze Member (0% discount)</div>
+                                <div class="card-body">
+                                    <p>Requirements: All other customers</p>
+                                    <p>Benefits: Priority in store pickup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="membership-result" class="mt-4 p-4 rounded d-none">
+                        <!-- Membership result will be shown here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promotion Modal -->
+    <div class="modal fade" id="promotionModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Special Promotions</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <strong>Special Offer!</strong> An additional 10% discount will be given to all levels of
+                        membership on these special promotion days.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/9b9732610ba24615897ad2d9a48dba92~tplv-a9rns2rl98-image.image?rcl=20251030190704CA3F2EF7E0063E1B797B&rk3s=8e244e95&rrcfp=f06b921b&x-expires=1764414561&x-signature=vZs2pepLkzvzGlSZ1xQJpvRoBOo%3D"
+                                    class="card-img-top" alt="Christmas Promotion">
+                                <div class="card-body">
+                                    <h5 class="card-title">Christmas Special</h5>
+                                    <p class="card-text">Enjoy our limited edition Christmas juices with festive
+                                        flavors. Valid from December 1st to December 25th.</p>
+                                    <p class="card-text"><strong>Promotion: </strong>Buy 2 get 1 free on all Christmas
+                                        special juices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/5ca7304d934b445cab8ec5ddff6d64d1~tplv-a9rns2rl98-image.image?rcl=20251030190704CA3F2EF7E0063E1B797B&rk3s=8e244e95&rrcfp=f06b921b&x-expires=1764414551&x-signature=7J03B%2FIsO8yAYvJYRQQbVaNcxok%3D"
+                                    class="card-img-top" alt="Lunar New Year Promotion">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lunar New Year Celebration</h5>
+                                    <p class="card-text">Fresh orange and tangerine juices for good luck in the new
+                                        year. Valid from Lunar New Year's Eve to the 7th day of the new year.</p>
+                                    <p class="card-text"><strong>Promotion: </strong>15% off on all citrus juices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/72a21eb242d2462e9eb34cda0879f7dd~tplv-a9rns2rl98-image.image?rcl=20251030190704CA3F2EF7E0063E1B797B&rk3s=8e244e95&rrcfp=f06b921b&x-expires=1764414550&x-signature=7uKisiaLrNHJ%2FHjGU6YKDASlSe4%3D"
+                                    class="card-img-top" alt="Mid-Autumn Festival Promotion">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mid-Autumn Festival</h5>
+                                    <p class="card-text">Sweet Osmanthus and pomelo juice specials to celebrate the
+                                        festival. Valid for the whole month of September.</p>
+                                    <p class="card-text"><strong>Promotion: </strong>Free mooncake with any purchase of
+                                        2 or more juices.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100">
+                                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/0beca2cd91fe4dd998eddd8053cc5834~tplv-a9rns2rl98-image.image?rcl=20251030190704CA3F2EF7E0063E1B797B&rk3s=8e244e95&rrcfp=f06b921b&x-expires=1764414550&x-signature=81%2BRmZVUAZXrgsW2In%2BRJMO6tug%3D"
+                                    class="card-img-top" alt="Valentine's Day Promotion">
+                                <div class="card-body">
+                                    <h5 class="card-title">Valentine's Day Special</h5>
+                                    <p class="card-text">Romantic red fruit juices for couples. Valid from February 1st
+                                        to February 14th.</p>
+                                    <p class="card-text"><strong>Promotion: </strong>Special couple's package at only
+                                        HK$99 (2 large juices + fruit platter).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6>Current Promotion:</h6>
+                        <div id="current-promotion" class="p-3 bg-success text-white rounded">
+                            <!-- Current promotion will be shown here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="apply-promotion">Apply Promotion Discount</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Checkout Modal -->
     <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -300,45 +497,43 @@
                                 <input type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="tel" class="form-control" required>
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" id="phone" pattern="[0-9]*" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
                             </div>
 
                             <h6 class="mt-4">Delivery Address (if applicable)</h6>
                             <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control">
+                                <label for="address">Address</label>
+                                <textarea class="form-control" id="address" rows="3"></textarea>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label>Postal Code</label>
                                 <input type="text" class="form-control">
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="col-md-6">
                             <h6>Payment Method</h6>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment" value="credit" checked>
-                                <label class="form-check-label">Credit Card</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment" value="wechat">
-                                <label class="form-check-label">WeChat Pay</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="payment" value="alipay">
-                                <label class="form-check-label">Alipay</label>
-                            </div>
+                            <!-- label for matching to input id -->
+                            <input type="radio" name="payment" id="credit" value="credit" checked>
+                            <label for="credit">Credit Card</label><br>
+
+                            <input type="radio" name="payment" id="wechat" value="wechat">
+                            <label for="wechat">WeChat Pay</label><br>
+
+                            <input type="radio" name="payment" id="alipay" value="alipay">
+                            <label for="alipay">Alipay</label><br>
+
                             <!-- <div class="form-check">
                                 <input class="form-check-input" type="radio" name="payment" value="octopus">
                                 <label class="form-check-label">Octopus</label>
                             </div> -->
 
-                            <div class="mt-4 p-3 bg-light rounded">
+                            <div class="mt-4 p-3 custom-bg rounded">
                                 <h6>Order Summary</h6>
                                 <div id="checkout-summary">
                                     <!-- Summary will be generated here -->
@@ -350,6 +545,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
+                    <div class="w-100 d-flex justify-content-between"></div>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <button type="button" class="btn btn-primary" id="place-order">Place Order</button>
                 </div>
@@ -357,7 +553,65 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title w-100 text-center">
+                        <!-- <i class="fas fa-apple-alt text-success mr-2"></i>Member Login -->
+                        <i class="fas fa-apple-alt fa-lg text-success mb-2"></i>&nbsp;&nbsp;Fresh Squeeze Login
+                        <p class="text-muted" style="opacity: 0.5;">Welcome back! Please log in to continue.</p>
+                    </h5>
+                    <button type="button" class="close position-absolute" data-dismiss="modal"
+                        style="right:15px; top:15px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- login form for modal -->
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="email-login"><i class="fas fa-envelope mr-2 text-success"></i>Email
+                                address</label>
+                            <input type="email" class="form-control" id="email-login" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-login"><i class="fas fa-lock mr-2 text-success"></i>Password</label>
+                            <input type="password" class="form-control" id="password-login"
+                                placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="remember-me">
+                            <label class="form-check-label" for="remember-me">Remember Me</label>
+                        </div>
+                        <button type="submit" class="btn btn-success login-btn-main">Login</button>
+
+                        <div class="text-center mt-3">
+                            <small>
+                                <a href="#" class="text-success">Forgot Password?</a> |
+                                <a href="#" class="text-success">Sign Up</a>
+                            </small>
+                        </div>
+
+                        <hr>
+                        <div class="text-center social-login">
+                            <p class="text-muted mb-2">Or log in with</p>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                            <a href="#"><i class="fab fa-apple"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- QRCode library (lightweight) -->
@@ -365,6 +619,7 @@
     <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.min.js"></script>
 
     <script>
+
         // Product data
         const products = [
             {
@@ -482,16 +737,52 @@
         // Shopping cart array
         let cart = [];
 
+
+        // Membership and discount variables
+        let currentMembership = {
+            level: "Bronze",
+            discount: 0,
+            juiceCups: 0,
+            totalSpending: 0
+        };
+
+        let promotionApplied = false;
+
+        // Sample customers data
+        const sampleCustomers = [
+            { name: "Customer 1", juiceCups: 35, totalSpending: 1200 }, // Diamond
+            { name: "Customer 2", juiceCups: 28, totalSpending: 950 },  // Gold
+            { name: "Customer 3", juiceCups: 18, totalSpending: 550 },  // Silver
+            { name: "Customer 4", juiceCups: 10, totalSpending: 350 },  // Bronze
+            { name: "Customer 5", juiceCups: 40, totalSpending: 1500 }, // Diamond
+            { name: "Customer 6", juiceCups: 22, totalSpending: 650 },  // Gold
+            { name: "Customer 7", juiceCups: 16, totalSpending: 420 },  // Silver
+            { name: "Customer 8", juiceCups: 5, totalSpending: 200 },   // Bronze
+            { name: "Customer 9", juiceCups: 32, totalSpending: 1100 }, // Diamond
+            { name: "Customer 10", juiceCups: 25, totalSpending: 800 }, // Gold
+            { name: "Customer 11", juiceCups: 17, totalSpending: 480 }, // Silver
+            { name: "Customer 12", juiceCups: 8, totalSpending: 300 },  // Bronze
+            { name: "Customer 13", juiceCups: 38, totalSpending: 1300 }, // Diamond
+            { name: "Customer 14", juiceCups: 21, totalSpending: 620 },  // Gold
+            { name: "Customer 15", juiceCups: 19, totalSpending: 520 },  // Silver
+            { name: "Customer 16", juiceCups: 12, totalSpending: 380 },  // Bronze
+            { name: "Customer 17", juiceCups: 31, totalSpending: 1050 }, // Diamond
+            { name: "Customer 18", juiceCups: 24, totalSpending: 750 },  // Gold
+            { name: "Customer 19", juiceCups: 14, totalSpending: 390 },  // Bronze
+            { name: "Customer 20", juiceCups: 27, totalSpending: 900 }   // Gold
+        ];
+
+
         // Generate product cards
         function generateProducts() {
             const container = document.getElementById('products-container');
 
             products.forEach(product => {
                 const card = document.createElement('div');
-                card.className = 'col-md-4 mb-4';
+                card.className = 'col-md-4 col-sm-6 mb-4'; // Added col-sm-6 for mobile responsiveness
                 card.innerHTML = `
                     <div class="card product-card h-100">
-                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="width: 350px;  object-fit: fill ;">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}" style="object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">${product.name}</h5>
                             <p class="card-text health-benefit">${product.description}</p>
@@ -601,9 +892,13 @@
             cartCountElement.textContent = itemCount;
 
             // Calculate total
-            const total = cart.reduce((sum, item) => sum + item.total, 0);
-            cartTotalElement.textContent = total;
-            checkoutTotalElement.textContent = total;
+            const subtotal = cart.reduce((sum, item) => sum + item.total, 0);
+
+            // Calculate final price with discounts
+            const priceDetails = calculateFinalPrice(subtotal);
+
+            cartTotalElement.textContent = priceDetails.finalPrice.toFixed(2);
+            checkoutTotalElement.textContent = priceDetails.finalPrice.toFixed(2);
 
             // Enable/disable checkout button
             checkoutBtn.disabled = cart.length === 0;
@@ -648,6 +943,36 @@
                 `;
                 checkoutSummary.appendChild(summaryItem);
             });
+
+            // Add discount information to checkout summary
+            if (subtotal > 0) {
+                const subtotalElement = document.createElement('div');
+                subtotalElement.innerHTML = `<small class="font-weight-bold">Subtotal: HK$${subtotal.toFixed(2)}</small>`;
+                checkoutSummary.appendChild(subtotalElement);
+
+                if (currentMembership.discount > 0) {
+                    const membershipDiscountElement = document.createElement('div');
+                    membershipDiscountElement.innerHTML = `
+                        <small>${currentMembership.level} Member Discount (${(currentMembership.discount * 100).toFixed(0)}%): 
+                        -HK$${(subtotal * currentMembership.discount).toFixed(2)}</small>
+                    `;
+                    checkoutSummary.appendChild(membershipDiscountElement);
+                }
+
+                if (promotionApplied) {
+                    const promotionDiscountElement = document.createElement('div');
+                    promotionDiscountElement.innerHTML = `
+                        <small>Promotion Discount (10%): -HK$${(subtotal * 0.1).toFixed(2)}</small>
+                    `;
+                    checkoutSummary.appendChild(promotionDiscountElement);
+                }
+
+                if (currentMembership.discount > 0 || promotionApplied) {
+                    const divider = document.createElement('hr');
+                    divider.className = 'my-1';
+                    checkoutSummary.appendChild(divider);
+                }
+            }
 
             // Add event listeners to remove buttons
             document.querySelectorAll('.remove-item').forEach(button => {
@@ -694,21 +1019,256 @@
             });
         }
 
+        // Calculate membership level based on juice cups and spending
+        function calculateMembership(juiceCups, totalSpending) {
+            if (juiceCups > 30 && totalSpending > 1000) {
+                return { level: "Diamond", discount: 0.2 };
+            } else if (juiceCups > 20 && totalSpending > 600) {
+                return { level: "Gold", discount: 0.1 };
+            } else if (juiceCups > 15 && totalSpending > 400) {
+                return { level: "Silver", discount: 0.05 };
+            } else {
+                return { level: "Bronze", discount: 0 };
+            }
+        }
+
+        // Check membership level
+        function checkMembership() {
+            const juiceCups = parseInt(document.getElementById('juice-cups').value);
+            const totalSpending = parseInt(document.getElementById('total-spending').value);
+
+            const membership = calculateMembership(juiceCups, totalSpending);
+            currentMembership = {
+                level: membership.level,
+                discount: membership.discount,
+                juiceCups: juiceCups,
+                totalSpending: totalSpending
+            };
+
+            showMembershipResult(membership);
+            updateCart(); // Update cart to apply discount
+        }
+
+        // Show membership result
+        function showMembershipResult(membership) {
+            const resultDiv = document.getElementById('membership-result');
+            resultDiv.classList.remove('d-none');
+
+            let bgColor, textColor;
+            switch (membership.level) {
+                case "Diamond":
+                    bgColor = "bg-danger";
+                    textColor = "text-white";
+                    break;
+                case "Gold":
+                    bgColor = "bg-warning";
+                    textColor = "text-white";
+                    break;
+                case "Silver":
+                    bgColor = "bg-secondary";
+                    textColor = "text-white";
+                    break;
+                default:
+                    bgColor = "bg-light";
+                    textColor = "text-dark";
+            }
+
+            resultDiv.className = `mt-4 p-4 rounded ${bgColor} ${textColor}`;
+            resultDiv.innerHTML = `
+                <h5>Your Membership Level: ${membership.level}</h5>
+                <p>Discount Rate: ${(membership.discount * 100).toFixed(0)}%</p>
+                <p>This discount will be automatically applied at checkout.</p>
+            `;
+        }
+
+        // Generate sample customers buttons
+        function generateSampleCustomers() {
+            const container = document.getElementById('sample-customers');
+
+            sampleCustomers.forEach((customer, index) => {
+                const button = document.createElement('button');
+                button.className = 'btn btn-sm btn-outline-secondary m-1';
+                button.textContent = customer.name;
+                button.addEventListener('click', () => {
+                    document.getElementById('juice-cups').value = customer.juiceCups;
+                    document.getElementById('total-spending').value = customer.totalSpending;
+                    checkMembership();
+                });
+                container.appendChild(button);
+            });
+        }
+
+        // Get current promotion based on date
+        function getCurrentPromotion() {
+            const now = new Date();
+            const month = now.getMonth(); // 0-based
+
+            // For demo purposes, we'll cycle through promotions based on month
+            const promotions = [
+                { name: "New Year Special", discount: 0.1, description: "Start the year fresh with 10% off all juices!" },
+                { name: "Valentine Special", discount: 0.1, description: "Sweeten your love with 10% off all juices!" },
+                { name: "Spring Refresh", discount: 0.1, description: "Spring into health with 10% off all green juices!" },
+                { name: "Summer Cool Down", discount: 0.1, description: "Beat the heat with 10% off all iced juices!" },
+                { name: "Mid-Autumn Delight", discount: 0.1, description: "Celebrate the moon festival with 10% off all citrus juices!" },
+                { name: "Halloween Spooktacular", discount: 0.1, description: "Spooky good deals with 10% off all purple juices!" },
+                { name: "Christmas Special", discount: 0.1, description: "Festive flavors with 10% off all holiday juices!" },
+                { name: "Winter Warmth", discount: 0.1, description: "Stay warm with 10% off all hot juices!" }
+            ];
+
+            return promotions[month % promotions.length];
+        }
+
+        // Apply promotion discount
+        function applyPromotion() {
+            promotionApplied = true;
+            updateCart();
+            alert('Promotion discount applied!');
+            $('#promotionModal').modal('hide');
+        }
+
+        // Calculate final price with all discounts
+        function calculateFinalPrice(subtotal) {
+            let discount = currentMembership.discount;
+
+            // Add promotion discount if applied
+            if (promotionApplied) {
+                discount += 0.1; // Additional 10% discount
+            }
+
+            const discountAmount = subtotal * discount;
+            const finalPrice = subtotal - discountAmount;
+
+            return {
+                subtotal: subtotal,
+                discount: discount,
+                discountAmount: discountAmount,
+                finalPrice: finalPrice
+            };
+        }
+
+        // Initialize event listeners
+        function initEventListeners() {
+            // Size selection change
+            document.querySelectorAll('.cup-size').forEach(radio => {
+                radio.addEventListener('change', updateModalTotal);
+            });
+
+            // Quantity change
+            document.getElementById('quantity').addEventListener('input', updateModalTotal);
+
+            // Add to cart button
+            document.getElementById('add-to-cart').addEventListener('click', addToCart);
+
+            // Checkout button
+            document.getElementById('checkout-btn').addEventListener('click', () => {
+                // Update membership info in checkout modal
+                updateCheckoutMembershipInfo();
+
+                $('#cartModal').modal('hide');
+                setTimeout(() => {
+                    $('#checkoutModal').modal('show');
+                }, 300);
+            });
+
+            // Place order button
+            document.getElementById('place-order').addEventListener('click', () => {
+                alert('Thank you for your order! This would normally process payment and confirm your order.');
+                cart = [];
+                updateCart();
+                $('#checkoutModal').modal('hide');
+
+                // Reset discounts after order
+                promotionApplied = false;
+            });
+
+            // Check membership button
+            document.getElementById('check-membership').addEventListener('click', checkMembership);
+
+            // Apply promotion button
+            document.getElementById('apply-promotion').addEventListener('click', applyPromotion);
+        }
+
+        // Update checkout membership info
+        function updateCheckoutMembershipInfo() {
+            const checkoutSummary = document.getElementById('checkout-summary');
+
+            // Clear any existing membership info
+            const existingMembershipInfo = document.getElementById('membership-info');
+            if (existingMembershipInfo) {
+                existingMembershipInfo.remove();
+            }
+
+            // Add membership info if not Bronze
+            if (currentMembership.level !== "Bronze") {
+                const membershipInfo = document.createElement('div');
+                membershipInfo.id = 'membership-info';
+
+                let bgColor;
+                switch (currentMembership.level) {
+                    case "Diamond":
+                        bgColor = "bg-danger";
+                        break;
+                    case "Gold":
+                        bgColor = "bg-warning";
+                        break;
+                    case "Silver":
+                        bgColor = "bg-secondary";
+                        break;
+                    default:
+                        bgColor = "bg-muted";
+                }
+
+                membershipInfo.innerHTML = `
+                    <div class="${bgColor} text-white p-2 rounded mb-3">
+                        <h6 class="mb-0">${currentMembership.level} Member Benefits</h6>
+                        <small>Discount: ${(currentMembership.discount * 100).toFixed(0)}%</small>
+                    </div>
+                `;
+
+                // Insert at the beginning of checkout summary
+                if (checkoutSummary.firstChild) {
+                    checkoutSummary.insertBefore(membershipInfo, checkoutSummary.firstChild);
+                } else {
+                    checkoutSummary.appendChild(membershipInfo);
+                }
+            }
+        }
+
+
         // Initialize the page
         function init() {
             generateProducts();
             generateShopQRCodes();
+            generateSampleCustomers();
             initEventListeners();
             updateCart();
+
+            // Show current promotion
+            showCurrentPromotion();
         }
+
+
+
+        // Show current promotion
+        function showCurrentPromotion() {
+            const currentPromotion = getCurrentPromotion();
+            const currentPromotionDiv = document.getElementById('current-promotion');
+
+            currentPromotionDiv.innerHTML = `
+                <h6 class="mb-0">${currentPromotion.name}</h6>
+                <p>${currentPromotion.description}</p>
+                <small class="font-weight-bold">Valid until the end of this month</small>
+            `;
+        }
+
 
         // Generate QR codes for each shop. Encodes an absolute URL to this page with ?shop=<name>
         function generateShopQRCodes() {
             // Map shop IDs to readable names/labels
             const shops = [
-                { id: 'CausewayBay', label: 'Causeway Bay', icon: './Image/qr-strawberry-juice.png' },
-                { id: 'MongKok', label: 'Mong Kok', icon: './Image/qr-3juices.png' },
-                { id: 'Central', label: 'Central', icon: './Image/qr-smoothie.png' }
+                { id: 'CausewayBay', label: 'Causeway Bay', icon: './Image/qr-strawberry-juice.png', dotColor: 'red' },
+                { id: 'MongKok', label: 'Mong Kok', icon: './Image/qr-3juices.png', dotColor: 'blue' },
+                { id: 'Central', label: 'Central', icon: './Image/qr-smoothie.png', dotColor: 'green' }
             ];
 
             // Determine base URL - prefer the document location origin + pathname so links work locally when served
@@ -733,7 +1293,7 @@
                         data: url, // The data to encode in the QR code
                         image: shop.icon, // Path to your logo images
                         dotsOptions: {
-                            color: "black", // Color of the QR code dots
+                            color: shop.dotColor, // Color of the QR code dots
                             type: "dots", // Shape of the QR code dots (e.g., "square", "dots", "rounded")
                         },
                         backgroundOptions: {
@@ -769,8 +1329,70 @@
 
         // Run initialization when DOM is loaded
         document.addEventListener('DOMContentLoaded', init);
-    </script>
-</body>
 
+    </script>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulate user "database"- Array
+            const users = [
+                { email: "erb@freshsqueeze.com", password: "erb123", name: "ERB User" },
+                { email: "mc@freshsqueeze.com", password: "mc123", name: "MC" },
+                { email: "dick@freshsqueeze.com", password: "dick123", name: "Dick" }
+            ];
+
+            const loginForm = document.getElementById('login-form');
+            const loginBtn = document.getElementById('login-button');
+
+            // Load saved login state (if user previously logged in)
+            const loggedUser = localStorage.getItem('userName');
+            if (loggedUser) {
+                loginBtn.classList.remove('btn-outline-secondary');
+                loginBtn.classList.add('btn-outline-success');
+                loginBtn.innerHTML = `<i class="fas fa-user mr-1"></i> ${loggedUser} (Logout)`;
+                loginBtn.removeAttribute('data-toggle');
+                loginBtn.removeAttribute('data-target');
+                loginBtn.addEventListener('click', () => {
+                    localStorage.removeItem('userName');
+                    alert('You’ve been logged out.');
+                    window.location.reload();
+                });
+            }
+
+            // Handle login form submit
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email-login').value.trim().toLowerCase();
+                const password = document.getElementById('password-login').value.trim();
+                const user = users.find(u => u.email.toLowerCase() === email && u.password === password);
+
+                if (user) {
+                    // login success
+                    $('#loginModal').modal('hide');
+                    alert(`Welcome back, ${user.name}! 🍹`);
+                    localStorage.setItem("userName", user.name);
+
+                    loginBtn.classList.remove('btn-outline-secondary');
+                    loginBtn.classList.add('btn-outline-primary');
+                    loginBtn.innerHTML = `<i class="fas fa-user mr-1"></i> ${user.name} (Logout)`;
+                    loginBtn.removeAttribute('data-toggle');
+                    loginBtn.removeAttribute('data-target');
+                    loginBtn.addEventListener('click', () => {
+                        localStorage.removeItem('userName');
+                        alert('You’ve been logged out.');
+                        window.location.reload();
+                    });
+                } else {
+                    alert("Invalid email or password. Please try again.");
+                }
+            });
+        });
+    </script>
+
+
+</body>
 
 </html>
