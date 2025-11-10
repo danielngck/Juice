@@ -1,39 +1,20 @@
-/*
-    .work-sans-<uniquifier> {
-        font-family: "Work Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-    }
-    */
-
-body {
-    font-family: 'Work Sans', sans-serif;
-    background-color: #f8f9fa;
-    color: #333333;
-}
-
 .container h2 {
-    margin: 2.5rem 0;
+    /* margin: 3.5rem 0; */
     font-size: 2rem;
-    font-weight: bold;
-    color: #0084e9;
+    font-weight: normal;
+    color: #026ab0;
     font-style: normal;
 }
 
-.container p {
-    text-align: justify;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #555555;
+.spacing-top {
+    padding-top: 80px;
+    /* or padding-top: 50px; */
 }
 
 /* Lead paragraph styling from bootstrap*/
 .lead {
     font-size: 1.25rem;
-    /* Larger font size */
     font-weight: 300;
-    /* Light font weight */
 }
 
 .lead-1 {
@@ -54,7 +35,7 @@ body {
 }
 
 .health-benefit {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #28a745;
     font-style: italic;
 }
@@ -70,22 +51,21 @@ body {
 
 /* Make brand and link text slightly larger */
 .navbar .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     /* default ≈1rem */
     font-weight: 600;
     /* bolden a bit for visibility */
 }
 
 .navbar .nav-link {
-    font-size: 1.25rem;
+    font-size: 0.8rem;
     /* increase link size slightly */
 }
 
 /* make the cart button text match */
 .navbar .btn {
-    font-size: 1.05rem;
+    font-size: 0.8rem;
 }
-
 
 .btn-primary {
     background-color: #28a745;
@@ -142,23 +122,196 @@ body {
 }
 
 .bg-gradient-success {
-    background: linear-gradient(180deg, #66e283 0%, #30ce54 100%);
+    background: linear-gradient(180deg, #4faf65 0%, #07b02f 100%);
 }
 
-@media (max-width: 768px) {
+.custom-bg {
+    background-color: #fcebd4;
+    /* Replace with your desired color */
+}
+
+@media (max-width: 1000px) {
     .container h2 {
-        margin: 17rem 0 2.5rem; /* Increased top margin */
+        /*margin-top: 18rem;
+        margin-bottom: 1.25rem;*/
         font-size: 2rem;
         font-weight: bold;
         color: #0084e9;
         font-style: normal;
     }
 
-    .container p {
-        text-align: justify;
-        font-size: 1.1rem;
-        line-height: 1.5;
-        color: #555555;
-        padding-top: 1rem; /* Added top padding */
+    .spacing-top {
+        padding-top: 100px;
+        /* or padding-top: 50px; */
+    }
+
+
+    .modal-dialog {
+        width: 90%;
+        /* Set modal width for mobile */
+        height: auto;
+        margin: auto;
+        /* Center the modal */
+    }
+
+    .modal-body {
+        max-height: 400px;
+        /* Adjust this value as needed */
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        /* Adjust spacing between form groups */
+    }
+
+    .custom-bg {
+        padding: 15px;
+        /* Adjust padding for the summary section */
+    }
+
+    h6 {
+        font-size: 1.2rem;
+        /* Slightly larger text for headings */
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        /* Stack buttons vertically on small screens */
+        align-items: stretch;
+        /* Stretch buttons to full width */
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+        /* Full width buttons */
+        margin: 5px 0;
+        /* Add spacing between buttons */
+    }
+}
+
+
+/* Login Modal Styling */
+#loginModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#loginModal .modal-header {
+    border-bottom: none;
+    text-align: center;
+}
+
+#loginModal h5.modal-title {
+    color: #28a745;
+    font-weight: 600;
+    width: 100%;
+}
+
+.login-btn-main {
+    background-color: #28a745;
+    border: none;
+    width: 100%;
+}
+
+.login-btn-main:hover {
+    background-color: #218838;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
+    max-width: 200px;
+    width: 100%;
+}
+
+.login-container h3 {
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login-btn {
+    background-color: #28a745;
+    border: none;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #218838;
+}
+
+.social-login i {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: #28a745;
+}
+
+.social-login i:hover {
+    color: #155d27;
+}
+
+.card-img-top {
+    width: 100%;
+    /* Make the image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+@media (max-width: 1000px) {
+    .product-card {
+        margin-bottom: 10px;
+        /* Adjust spacing for mobile */
+    }
+}
+
+
+
+.carousel-container {
+    width: 1200px;
+    /* Visible width */
+    overflow: hidden;
+    margin: 20px auto;
+    border: 5px solid #7ffa6e;
+}
+
+.carousel {
+    display: flex;
+    width: calc(8* 400px);
+    /* Total width = 8 images times width */
+    animation: scroll-left 25s linear infinite;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+}
+
+.carousel:hover {
+    animation-play-state: paused;
+}
+
+.carousel img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    border: 3px solid #898888;
+    border-radius: 8px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Scroll exactly half the width */
     }
 }
